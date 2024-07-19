@@ -1,0 +1,12 @@
+<div>
+    <h1>Expense Tracker</h1>
+    <input [(ngModel)]="newExpense.description" placeholder="Description">
+    <input [(ngModel)]="newExpense.amount" type="number" placeholder="Amount">
+    <button (click)="addExpense()">Add Expense</button>
+    <ul>
+      <li *ngFor="let expense of expenses | async">
+        {{ expense.description }}: ${{ expense.amount }}
+      </li>
+    </ul>
+  </div>
+  
